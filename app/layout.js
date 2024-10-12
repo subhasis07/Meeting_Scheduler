@@ -23,12 +23,12 @@ export default function RootLayout({ children }) {
 
     
     <html lang="en">
-      <body className={`inter.className`}>
+      <body className={`inter.className `}>
 
         {/* Header */}
         <Header/>
 
-        <main className="h-screen w-full bg-gradient-to-b from-blue-100 to-white">
+        <main className="flex-grow w-full bg-gradient-to-b from-blue-100 to-white">
           {children}
         </main>
 
