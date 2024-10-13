@@ -1,6 +1,8 @@
 import {Inter} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/pages/Header";
+
+
 import {
   ClerkProvider,
   SignInButton,
@@ -8,6 +10,7 @@ import {
   SignedOut,
   UserButton
 } from '@clerk/nextjs'
+import CreateEventDrawer from "@/components/pages/CreateEventDrawer";
 
 const inter = Inter({subsets:["latin"]})
 
@@ -40,6 +43,8 @@ export default function RootLayout({ children }) {
           </div>
           
         </footer>
+
+        <CreateEventDrawer/>
         
       </body>
     </html>
