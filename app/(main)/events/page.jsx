@@ -1,9 +1,29 @@
-import React from 'react'
+import { getUserEvents } from '@/actions/events'
+import EventCard from '@/components/pages/EventCard'
+import React, { Suspense } from 'react'
 
-const Events = () => {
-  return (
-    <div>Events Page</div>
+export default function EventsPage(){
+  return(
+    <Suspense fallback={<div>Loading Events...</div>}>
+      <Events/>
+    </Suspense>
   )
 }
 
-export default Events
+async function Events(){
+
+  const {events, username} = await getUserEvents()
+  
+  if(events.length ===0) {
+    return <p>You have not created any events yet</p>
+  }
+  
+  return (
+    <div className="grid gap-4 grid-cols-1 lg:grid-cols-2">
+      {events?.map((event)=>(
+        <EventCard key={event.id} event={event} username={username}/>
+      ))}
+    </div>
+  )
+}
+
