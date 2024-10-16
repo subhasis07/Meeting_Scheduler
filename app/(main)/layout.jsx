@@ -28,7 +28,7 @@ export default function appLayout({children}){
                     <nav className="mt-8">
                         <ul>
                             {navItems.map((item)=>(
-                                <li>
+                                <li key={item.href}>
                                     <Link 
                                         href={item.href}
                                         className={`flex items-center px-4 py-4 text-gray-700  hover:bg-gray-100 ${

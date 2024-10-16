@@ -96,24 +96,24 @@ export async function deleteEvent(eventId) {
   }
   
 
-  export async function getEventDetails(username, eventId) {
-    const event = await db.event.findFirst({
-      where: {
-        id: eventId,
-        user: {
-          username: username,
-        },
-      },
-      include: {
-        user: {
-          select: {
-            name: true,
-            email: true,
-            imageUrl: true,
-          },
-        },
-      },
-    });
+  // export async function getEventDetails(username, eventId) {
+  //   const event = await db.event.findFirst({
+  //     where: {
+  //       id: eventId,
+  //       user: {
+  //         username: username,
+  //       },
+  //     },
+  //     include: {
+  //       user: {
+  //         select: {
+  //           name: true,
+  //           email: true,
+  //           imageUrl: true,
+  //         },
+  //       },
+  //     },
+  //   });
   
-    return event;
-  }
+  //   return event;
+  // }
