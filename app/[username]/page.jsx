@@ -1,6 +1,20 @@
 import { getUserByUsername } from "@/actions/users";
 import EventCard from "@/components/pages/EventCard";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { notFound } from "next/navigation";
+
+export async function generateMeradata({params}){
+  const user = await generateMeradata(params.username);
+
+  if (!user) {
+    notFound();
+  }
+
+  return{
+    title: `${user.name}'s Profile | Appointrr`,
+    description: `Book an Event with ${user.name}.`
+  }
+}
 
 export default async function UserProfilePage({ params }) {
     const user = await getUserByUsername(params.username);

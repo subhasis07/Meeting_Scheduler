@@ -58,6 +58,7 @@ export async function getUserByUsername(username){
                     title:true,
                     description: true,
                     isPrivate: true,
+                    duration: true,
                     _count:{
                         select: {
                             bookings: true,

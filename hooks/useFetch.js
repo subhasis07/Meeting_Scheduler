@@ -18,7 +18,7 @@ const useFetch =(callback) =>{
             setError(error);
 
         }finally{
-            setLoading(true);
+            setLoading(false);
         }
     }
 
